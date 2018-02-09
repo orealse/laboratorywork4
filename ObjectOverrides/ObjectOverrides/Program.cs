@@ -14,7 +14,21 @@ namespace ObjectOverrides
             Person p1 = new Person();
 
             // Использовать унаследованне члены System.Object.
-            Console.WriteLine
+            Console.WriteLine("ToString: {0}", p1.ToString());
+            Console.WriteLine("Hash code: {0}", p1.GetHashCode());
+            Console.WriteLine("Type: {0}", p1.GetType());
+
+            // Создать другую ссылку на p1.
+            Person p2 = p1;
+            object o = p2;
+
+            // Указывают ли ссылки на один и то же объект в памяти?
+            if (o.Equals(p1) && p2.Equals(o))
+            {
+                Console.WriteLine("Same instance!"); // Один и тот же экземпляр.
+            }
+            Console.ReadLine();
+            }
+
         }
     }
-}
